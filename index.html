@@ -22,11 +22,14 @@
         <button class="btn"
                 @click="title = 'Теперь другая проверочка'"
         >Изменить название</button>  -->
+        <div class="form-control">
+            <input type="text" @keyup.shift.enter="addItem($event)" ref="myInput">
+        </div>
                <ul class="list" v-if="items.length">
                    <li
                        class="list-item"
-                       v-for="(item, i) in evenItems"
-                       @click="items.splice(i,1)"
+                       v-for="(item, i) in items"
+                       @click.right.prevent="items.splice(i,1)"
                        :key="item"
                    >
                        <strong>{{ item }}</strong>&nbsp;
