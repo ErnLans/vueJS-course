@@ -23,9 +23,16 @@
                 @click="title = 'Теперь другая проверочка'"
         >Изменить название</button>  -->
                <ul class="list">
-                   <li class="list-item" v-for="(item, i) in 7">
-                       <strong>{{i}}</strong> {{ item }}
+                   <li
+                       class="list-item"
+                       v-for="(item, i) in items"
+                       @click="items.splice(i,1)"
+                   >
+                       <strong>{{ item }}</strong>
                    </li>
+<!--                   <li class="list-item" v-for="(value, key) in person">
+                       <strong>{{key}}</strong> {{ value }}
+                   </li>-->
                </ul>
     </div>
 </div>
