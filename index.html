@@ -22,7 +22,7 @@
         <button class="btn"
                 @click="title = 'Теперь другая проверочка'"
         >Изменить название</button>  -->
-               <ul class="list">
+               <ul class="list" v-if="items.length">
                    <li
                        class="list-item"
                        v-for="(item, i) in items"
@@ -34,6 +34,8 @@
                        <strong>{{key}}</strong> {{ value }}
                    </li>-->
                </ul>
+<!--        <h3 v-else>Элементов нет</h3>-->
+        <h3 v-show="items.length === 0">Элементов нет</h3>
     </div>
 </div>
 
